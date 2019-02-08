@@ -7,13 +7,13 @@ Feel free to use then but I strongly recommend start your own dotfiles from scra
 
 ## Setup
 
-- Create a folder called `dotfiles` in your home folder
+- Create a folder called `.dotfiles` in your home folder
 
   ```shell
-  mkdir ~/dotfiles
+  mkdir ~/.dotfiles
   ```
 
-- Clone this repository inside the `~/dotfiles` folder
+- Clone this repository inside the `~/.dotfiles` folder
 
   ```shell
   git clone git@github.com:odineiramone/dotfiles.git ~/dotfiles
