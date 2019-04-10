@@ -16,7 +16,7 @@ Feel free to use then but I strongly recommend start your own dotfiles from scra
 - Clone this repository inside the `~/.dotfiles` folder
 
   ```shell
-  git clone git@github.com:odineiramone/dotfiles.git ~/dotfiles
+  git clone git@github.com:odineiramone/dotfiles.git ~/.dotfiles
   ```
 
 - Copy this chunk of code inside your `.bash_profile` file
