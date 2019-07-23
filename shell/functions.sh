@@ -2,6 +2,33 @@ function battery_percent {
   pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f1 -d';';
 }
 
+function gmt_time {
+  date -u +"%H:%M:%S"
+}
+
+function current_folder {
+  basename "$PWD";
+}
+
+function current_branch {
+  if [ -d .git ]; then
+    git rev-parse --abbrev-ref HEAD;
+  fi;
+}
+
+# Disable 'git add .' and 'git stage .'
+function git {
+  if [ "$1" = "add" -o "$1" = "stage" ]; then
+    if [ "$2" = "." ]; then
+        printf "'git %s .' is currently disabled by your Git wrapper.\nMore info here https://stackoverflow.com/questions/25884007/disable-git-add-command\n" "$1";
+    else
+        command git "$@";
+    fi
+  else
+    command git "$@";
+  fi;
+}
+
 function prompt {
   local BLACK="\[\033[0;30m\]"
   local BLACKBOLD="\[\033[1;30m\]"
@@ -21,8 +48,16 @@ function prompt {
   local WHITEBOLD="\[\033[1;37m\]"
   local RESETCOLOR="\[\e[00m\]"
 
-  export PS1="$YELLOW[\A] $GREEN[\$(battery_percent)⚡️] $CYAN\u $PURPLE@ $BLUE\W $RESETCOLOR$GREEN\$(git branch 2> /dev/null | egrep '\*\ [a-zA-z0-9\-]*$')\n$WHITE[\#] → $RESETCOLOR"
+  export PS1="$YELLOW(\D{%R})$GREEN b:(\$(battery_percent)⚡️)$CYAN pwd:($BLUE\W$CYAN)$RESETCOLOR$CYAN git:($RED\$(current_branch)$CYAN)\n$WHITE[\#] → $RESETCOLOR"
   export PS2=" | → $RESETCOLOR"
 }
 
+# type \w on PS1 to full current folder path
+
 prompt
+
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
+
+source ~/.git-completion.bash
+export PATH="/usr/local/opt/openssl/bin:$PATH"
