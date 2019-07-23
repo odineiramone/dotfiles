@@ -23,7 +23,7 @@ Feel free to use then but I strongly recommend start your own dotfiles from scra
 
   ```shell
   # Loading our .dotfiles (aliases, functions, exports, extras)
-  for file in ~/.dotfiles/shell/*; do
+  for file in {~/.dotfiles/shell/aliases.sh,~/.dotfiles/shell/functions.sh}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
   done;
   unset file;
