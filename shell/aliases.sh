@@ -34,3 +34,7 @@ alias go_go_shoryuken='bundle exec shoryuken -R -C config/shoryuken.yml'
 alias jupyter_notebook='jupyter notebook'
 alias grepi='grep -i'
 alias how_do_i_repeat="echo 'for i in {1..10}; do command; done'"
+
+# DOCKER
+alias docker_stop_all='docker stop $(docker ps -aq)'
+alias docker_remove_all='docker rm $(docker ps -aq)'
