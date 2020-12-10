@@ -39,3 +39,4 @@ alias how_do_i_repeat="echo 'for i in {1..10}; do command; done'"
 alias docker_stop_all='docker stop $(docker ps -aq)'
 alias docker_remove_all='docker rm $(docker ps -aq)'
 alias docker_metabase_start='docker run -p 3001:3000 --name metabase --add-host=database:172.17.0.1 metabase/metabase'
+alias docker_run_with_rm='docker-compose run --rm'
