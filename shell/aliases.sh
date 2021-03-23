@@ -8,6 +8,10 @@ alias silvio_santos="sbt"
 alias bash_profile='subl ~/.bash_profile'
 alias source_bash_profile='source ~/.bash_profile'
 
+# ZSH_PROFILE
+alias bash_profile='subl ~/.bash_profile'
+alias source_bash_profile='source ~/.bash_profile'
+
 # POSTGRES
 alias pg_start='pg_ctl start'
 alias pg_stop='pg_ctl stop'
@@ -40,3 +44,7 @@ alias docker_stop_all='docker stop $(docker ps -aq)'
 alias docker_remove_all='docker rm $(docker ps -aq)'
 alias docker_metabase_start='docker run -p 3001:3000 --name metabase --add-host=database:172.17.0.1 metabase/metabase'
 alias docker_run_with_rm='docker-compose run --rm'
+
+# DOGHERO
+
+alias ssh-scooby='ssh -i "/Users/odineiribeiro/workspace/doghero/scooby/scooby.pem" ubuntu@ec2-35-169-252-99.compute-1.amazonaws.com'
