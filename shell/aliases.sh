@@ -1,8 +1,10 @@
 alias be='bundle exec'
 alias atom='open -a atom'
 alias subl='open -a sublime\ text'
+alias code='open -a visual\ studio\ code'
 alias git_rebase="echo 'comando que vale 1 milhao de dorales: git fetch origin master && git rebase origin/master'"
 alias silvio_santos="sbt"
+alias vim="nvim"
 
 # BASH_PROFILE
 alias bash_profile='subl ~/.bash_profile'

@@ -29,6 +29,14 @@ function git {
   fi;
 }
 
+function hours_and_minutes {
+  date +"%H:%M"
+}
+
+function current_directory_with_tilde {
+  dirs +0
+}
+
 function prompt {
   local BLACK="\[\033[0;30m\]"
   local BLACKBOLD="\[\033[1;30m\]"
@@ -48,7 +56,7 @@ function prompt {
   local WHITEBOLD="\[\033[1;37m\]"
   local RESETCOLOR="\[\e[00m\]"
 
-  export PS1="$YELLOW(\D{%R})$GREEN b:(\$(battery_percent)⚡️)$CYAN pwd:($BLUE\W$CYAN)$RESETCOLOR$CYAN git:($RED\$(current_branch)$CYAN)\n$WHITE[\#] → $RESETCOLOR"
+  export PS1="$YELLOW(\$(hours_and_minutes))$GREEN b:(\$(battery_percent)⚡️)$CYAN pwd:($BLUE\$(current_directory_with_tilde)$CYAN)$RESETCOLOR$CYAN git:($RED\$(current_branch)$CYAN)\n$WHITE[\#] → $RESETCOLOR"
   export PS2=" | → $RESETCOLOR"
 }
 
