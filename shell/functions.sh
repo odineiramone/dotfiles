@@ -6,6 +6,10 @@ function gmt_time {
   date -u +"%H:%M:%S"
 }
 
+function time_in_sp {
+  TZ="America/Sao_Paulo" date
+}
+
 function current_folder {
   basename "$PWD";
 }
